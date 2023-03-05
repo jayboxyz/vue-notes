@@ -1,0 +1,40 @@
+<!--第一步：创建文件夹及html文件-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门之Helloworld</title>
+    <!--第二步：引入Vue库，此处引入的是本地的vue.js文件-->
+    <script type="text/javascript" src="../vue.js"></script>
+	<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+</head>
+<body>
+    <!--第三步:创建一个Div-->
+    <div id="app">
+        <!--Vue的模板的绑定数据的方法，用两对花括号进行绑定Vue中的数据对象的属性 -->
+        <h1>{{message}}</h1>
+    </div>
+
+    <!--第四步：创建Vue的对象，并把数据绑定到上面创建好的div上去。-->
+    <!-- <script type="text/javascript">
+        var app=new Vue({ // 创建Vue对象，Vue的核心对象。
+            el:'#app', //el用于指定当前Vue实例为哪个容器服务，值通常为css选择器字符串。
+            data:{    // data: 是Vue对象中绑定的数据
+                message:'Hello Vue!' // message 自定义的数据
+            }
+        })
+    </script> -->
+
+    <!-- 第二种方法 -->
+    <script type="text/javascript">
+        var app=new Vue({ // 创建Vue对象，Vue的核心对象。
+            data:{    // data: 是Vue对象中绑定的数据
+                message:'Hello Vue!' // message 自定义的数据
+            }
+        })
+
+        // 挂载到容器
+        app.$mount('#app');
+    </script>
+</body>
+</html>

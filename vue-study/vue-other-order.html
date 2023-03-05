@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门之Helloworld</title>
+    <!--第二步：引入Vue库，此处引入的是本地的vue.js文件-->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+
+</body>
+
+<div id="app" v-if="isVue">Hello Vue!</div>
+<div v-else>Not Vue!</div>
+
+<div id="app2">
+    <h1 v-if="lang=== 'Python'">Hello Python!</h1>
+    <h1 v-else-if="lang=== 'Java'">Hello Java!</h1>
+    <h1 v-else-if="lang=== 'C'">Hello C!</h1> <!-- lang值为‘C’，此div盒子将会显示 -->
+    <h1 v-else>Other language!</h1>
+    <h1 v-else>Not Vue!</h1>
+</div>
+
+<div id="app3">
+    <h1 v-show="isVue">Hello Vue!</h1> <!-- 当isVue为true时，此div盒子才会显示 -->
+</div>
+
+
+<script type="text/javascript">
+    Vue.config.productionTip = false
+
+    new Vue({
+        el: '#app',
+        data: {
+            isVue: false
+        }
+    })
+
+    new Vue({
+        el:'#app2',
+        data:{
+            lang: 'C'
+        }
+    })
+
+    new Vue({
+        el:'#app3',
+        data:{
+            isVue: true
+        }
+    })
+
+</script>
+
+</html>

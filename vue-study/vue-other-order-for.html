@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门之Helloworld</title>
+    <!--第二步：引入Vue库，此处引入的是本地的vue.js文件-->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <ul>
+            <li v-for="lang in languages">
+                Hello, {{lang}}!
+            </li>
+        </ul>
+    </div>
+
+    <div id="app2">
+        <ul>
+            <li v-for="(value, key, index) in person">
+                {{index}}. {{key}} : {{value}}
+            </li>
+        </ul>
+    </div>
+
+    <div id="app3" v-text="message"></div>
+
+    <span id="app4" v-html="msgHtml"></span>
+
+    <div id="app5" v-once>第一次绑定的值：{{message}}</div>
+    
+</body>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。
+    new Vue({
+        el: '#app',
+        data: {
+            languages: ['Python', 'Java', 'PHP', 'C']
+        }
+    })
+
+    new Vue({
+        el: '#app2',
+        data: {
+            person: {
+                name: '张三',
+                age: 18,
+                gender: '男'
+            }
+        }
+    })
+
+    new Vue({
+        el: '#app3',
+        data: {
+            message:'Hello jay chou!'
+        }
+    })
+
+    new Vue({
+        el: '#app4',
+        data: {
+            message:'yyds!'
+        }
+    })
+
+    new Vue({
+        el: '#app5',
+        data: {
+            message:'haha!'
+        }
+    })
+
+</script>
+
+
+</html>

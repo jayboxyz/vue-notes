@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门之Helloworld</title>
+    <!--第二步：引入Vue库，此处引入的是本地的vue.js文件-->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- <a href="https://home.cnblogs.com/u/chenhuabin/" @click.prevent="fun1">我是一个a标签</a> -->
+        <a href="https://home.cnblogs.com/u/chenhuabin/" v-on:click.prevent="fun1">我是一个a标签</a>
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。
+        const vm = new Vue({
+            el: '#app',
+            methods: {      // 此处定义回调函数
+                fun1() {
+                    alert('Hello Vue! ')
+                    console.log('Hello Vue! ')
+                },
+            }
+        })
+    </script>
+
+</body>
+
+</html>

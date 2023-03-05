@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门之Helloworld</title>
+    <!--第二步：引入Vue库，此处引入的是本地的vue.js文件-->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        姓：<input type="text" v-model="firstName"> <br /><br />
+        名：<input type="text" v-model="lastName"> <br /><br />
+        全名计算第1次：<span>{{ fullname }}</span><br /><br />
+        全名计算第2次：<span>{{ fullname }}</span><br /><br />
+        全名计算第3次：<span>{{ fullname }}</span>
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。
+
+        // new Vue({
+        //     el: '#app',
+        //     data: {
+        //         firstName: 'zhang',
+        //         lastName: 'san'
+        //     },
+        //     computed: {   // 此处定义计算属性
+        //         fullname: {
+        //             get: function () {
+        //                 console.log('读取fullname ……')
+        //                 return this.firstName.toUpperCase() + '-' + this.lastName.toUpperCase()
+        //             }
+        //         },
+        //     }
+        // })
+
+        // var vm = new Vue({
+        //     el: '#app',
+        //     data: {
+        //         firstName: 'zhang',
+        //         lastName: 'san'
+        //     },
+        //     computed: {   // 此处定义计算属性
+        //         fullname: {
+        //             get: function () {
+        //                 console.log('读取fullname ……')
+        //                 return this.firstName.toUpperCase() + '-' + this.lastName.toUpperCase()
+        //             },
+        //             set(value) {
+        //                 console.log('修改fullname', value)
+        //                 const arr = value.split('-')
+        //                 this.firstName = arr[0]
+        //                 this.lastName = arr[1]
+        //             }
+        //         },
+        //     }
+        // })
+
+        // var vm = new Vue({
+        //     el: '#app',
+        //     data: {
+        //         firstName: 'zhang',
+        //         lastName: 'san'
+        //     },
+        //     computed: {   // 此处定义计算属性
+        //         fullname: function () {
+        //             console.log('读取fullname ……')
+        //             return this.firstName.toUpperCase() + '-' + this.lastName.toUpperCase()
+        //         }
+        //     }
+        // })
+
+        var vm = new Vue({
+        el:'#app',
+        data:{
+            firstName:'zhang',
+            lastName:'san'
+        },
+        computed:{   // 此处定义计算属性
+            fullname(){
+                console.log('读取fullname ……')
+                return this.firstName.toUpperCase() + '-' + this.lastName.toUpperCase()
+            }
+        }
+    })
+
+    </script>
+
+</body>
+
+</html>

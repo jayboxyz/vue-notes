@@ -1,0 +1,34 @@
+<!--第一步：创建文件夹及html文件-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门之Helloworld</title>
+    <!--第二步：引入Vue库，此处引入的是本地的vue.js文件-->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <a v-bind:href="school.url.toUpperCase()">点我跳转到{{school.name}}</a></br>
+        <a :href="school.url">点我跳转到{{school.name}}</a>
+    </div>
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。
+        new Vue({
+            el: '#app',
+            data: {
+                school: {
+                    name: '百度',
+                    url: 'http://www.baidu.com',
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
